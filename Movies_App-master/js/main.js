@@ -1,44 +1,19 @@
-// let landingPage = document.querySelector(".home");
-
-// let imageArray = ["home1.jpg" , "home2.jpg" , "home3.jpg"];
-
-// landingPage.style.backgroundImage = 'url("img/home1.jpg)';
-
-
-// let randomNumber = Math.floor(Math.random() * imageArray.length );
-
-
-// let randomOption = true;
-
-
-// function randomizeImgs(){
-//   if( randomOption === true){
-//     setInterval(() => {
-
-//       let randomNumber = Math.floor(Math.random() * imageArray.length );
-    
-//       landingPage.style.backgroundImage = 'url("img/'+  imageArray[randomNumber] +'")';
-    
-//     }, 4000);
-    
-//   }
-// }
-// randomizeImgs();
-
-let header = document.querySelector("header");
-let menuIcon = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
-
-
-
-
-menuIcon.onclick = () => {
-  navbar.classList.toggle("active");
-}
-window.onscroll = () => {
-  navbar.classList.remove("active");
-}
-window.addEventListener('scroll', () => {
-    header.classList.toggle("shadow" , window.scrollY > 0);
+// Close the collapsible menu when a nav-link is clicked
+document.querySelectorAll('.navbar-nav .nav-link').forEach(function (element) {
+  element.addEventListener('click', function () {
+    var navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse.classList.contains('show')) {
+      var bsCollapse = new bootstrap.Collapse(navbarCollapse);
+      bsCollapse.hide();
+    }
+  });
 });
 
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    mainNav.classList.add('navbar-scrolled');
+  } else {
+    mainNav.classList.remove('navbar-scrolled');
+  }
+});
