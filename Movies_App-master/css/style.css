@@ -59,78 +59,22 @@ body {
 #main-nav.navbar-scrolled .navbar-toggler {
   color: var(--bs-dark) !important;
 }
-/* Navbar */
-/* Home */
 
-/* Home Section */
+/* Home */
 #home {
   background: url('../img/home3.jpg') no-repeat center center;
   background-size: cover;
 }
-/* Home */
 
-/* Movies */
-.heading {
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--main-color);
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.movies-container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.box .box-img {
-  width: 100%;
-  height: 270px;
-}
-
-.box-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Movies & Coming Soon Sections */
+.movie-card-img {
+  transition: transform 0.2s linear;
   cursor: pointer;
-  transition: 0.2s all linear;
 }
 
-.box-img img:hover {
+.movie-card-img:hover {
   transform: translateY(-10px);
 }
-
-.box h3 {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--main-color);
-}
-
-.box span {
-  font-size: 13px;
-}
-
-/* Movies */
-/* Coming Soon */
-
-.coming-container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-/* Coming Soon */
 
 /* news */
 .news {
