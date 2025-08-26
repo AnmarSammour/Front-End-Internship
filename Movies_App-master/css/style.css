@@ -61,46 +61,12 @@ body {
 }
 /* Navbar */
 /* Home */
-.home {
-  width: 100%;
-  min-height: 100vh;
-  background-image: url(../img/home3.jpg);
-  background-position: center;
+
+/* Home Section */
+#home {
+  background: url('../img/home3.jpg') no-repeat center center;
   background-size: cover;
-  position: relative;
 }
-
-.home .home-text {
-  position: absolute;
-  top: 40%;
-  padding-left: 80px;
-}
-
-.home-text span {
-  font-weight: 500;
-  color: #000;
-  text-transform: uppercase;
-}
-
-.home-text h2 {
-  color: var(--bg-color);
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.home-text .btn {
-  background-color: var(--main-color);
-  color: var(--bg-color);
-  padding: 0.7rem 1.4rem;
-  border-radius: 0.5rem;
-  font-weight: 400;
-}
-
-.btn:hover {
-  background: #fa1216;
-}
-
 /* Home */
 
 /* Movies */
