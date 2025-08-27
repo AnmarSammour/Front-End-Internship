@@ -28,28 +28,29 @@
       <div class="container fw-semibold px-3 px-lg-4 py-lg-3">
         <div class="d-flex justify-content-between align-items-center w-100">
           <!-- Logo -->
-          <a class="navbar-brand fw-bold fs-6" href="#home">
+          <a class="navbar-brand  text-white fw-bold fs-6" href="#home">
             <i class="fa-solid fa-film me-2 fs-4 text-danger"></i> Movies
           </a>
           <!-- Mobile Menu Toggle (visible only on small screens) -->
-          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler border-0 text-white shadow-none d-lg-none" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>
           </button>
           <!-- Menu -->
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item mx-lg-4">
-                <a class="nav-link active" href="#home">Home</a>
+                <a class="nav-link position-relative text-danger pb-2 mx-2 active" href="#home">Home</a>
               </li>
               <li class="nav-item mx-lg-4">
-                <a class="nav-link" href="#movies">Movies</a>
+                <a class="nav-link position-relative text-danger pb-2 mx-2" href="#movies">Movies</a>
               </li>
               <li class="nav-item mx-lg-4">
-                <a class="nav-link" href="#coming-soon">Coming Soon</a>
+                <a class="nav-link position-relative text-danger pb-2 mx-2" href="#coming-soon">Coming Soon</a>
               </li>
               <li class="nav-item mx-lg-4">
-                <a class="nav-link" href="#newsletter">Newsletter</a>
+                <a class="nav-link position-relative text-danger pb-2 mx-2" href="#newsletter">Newsletter</a>
               </li>
             </ul>
           </div>
@@ -84,7 +85,7 @@
     <div class="container  px-3 px-lg-5">
       <h5 class="text-white pb-2 border-bottom border-danger border-2 fw-semibold text-uppercase mb-5">Opening this Week
       </h5>
-      <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
         <!-- Movie Cards... -->
         <div class="col d-flex">
           <div class="movie-card d-flex flex-column">
@@ -191,7 +192,7 @@
     <div class="container px-3 px-lg-5">
       <h5 class="text-white pb-2 border-bottom border-danger border-2 fw-semibold text-uppercase mb-5">
         Coming Soon</h5>
-      <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
         <!-- Coming Soon Cards... -->
         <div class="col d-flex">
           <div class="movie-card d-flex flex-column">
@@ -294,7 +295,7 @@
   <!-- Coming Soon -->
 
   <div class="py-5"></div>
-  
+
   <!-- Newsletter -->
   <section id="newsletter" class="py-5 text-center mt-5">
     <div class="container px-3 px-lg-5">
@@ -303,8 +304,10 @@
         <span class="d-block">Newsletter</span>
       </h3>
       <form class="d-flex justify-content-center">
-        <div class="newsletter-form-wrapper bg-white rounded-3 p-2 w-100 d-flex align-items-center">
-          <input type="email" class="form-control form-control-sm newsletter-input border-0 shadow-none"
+        <div
+          class="newsletter-form-wrapper bg-white rounded-3 p-2 d-flex align-items-center justify-content-center justify-content-sm-between w-auto ">
+          <input type="email"
+            class="form-control form-control-sm newsletter-input border-0 shadow-none d-none d-sm-block"
             placeholder="Enter Email...">
           <!-- btn-main has been replaced with Bootstrap classes -->
           <button type="submit" class="btn btn-danger btn-sm rounded-3 text-uppercase px-4 py-2">Subscribe</button>
