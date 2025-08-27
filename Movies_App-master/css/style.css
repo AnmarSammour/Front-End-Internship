@@ -111,17 +111,9 @@ html::-webkit-scrollbar-thumb {
 /* footer */
 
 /* copy */
-.copy {
-  text-align: center;
-  color: var(--bg-color);
-  font-size: 1.1rem;
-}
-
-.copy span {
-  color: var(--main-color);
+.copyright span {
   cursor: pointer;
 }
-
 /* copy */
 
 /* Resbonsive */
