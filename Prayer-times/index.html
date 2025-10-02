@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواقيت الصلاة</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="city-selector">
+                <select id="cities-select"></select>
+            </div>
+            <div class="today-info">
+                <h1 id="city-name">القدس</h1>
+                <p id="date">-- ---- ----</p>
+            </div>
+        </header>
+
+        <main id="cards-container">
+            <div class="card">
+                <div class="card-content">
+                    <h2>الفجر</h2>
+                    <p id="fajr-time" class="time">--:--</p>
+                </div>
+                <i class="fa-regular fa-moon card-icon"></i>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>الشروق</h2>
+                    <p id="sunrise-time" class="time">--:--</p>
+                </div>
+                <i class="fa-solid fa-sun card-icon"></i>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>الظهر</h2>
+                    <p id="dhuhr-time" class="time">--:--</p>
+                </div>
+                <i class="fa-regular fa-sun card-icon"></i>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>العصر</h2>
+                    <p id="asr-time" class="time">--:--</p>
+                </div>
+                <i class="fa-solid fa-cloud-sun card-icon"></i>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>المغرب</h2>
+                    <p id="maghrib-time" class="time">--:--</p>
+                </div>
+                <i class="fa-solid fa-moon card-icon"></i>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>العشاء</h2>
+                    <p id="isha-time" class="time">--:--</p>
+                </div>
+                <i class="fa-solid fa-star-and-crescent card-icon"></i>
+            </div>
+        </main>
+    </div>
+
+    <!-- Axios Library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

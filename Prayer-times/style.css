@@ -1,0 +1,166 @@
+:root {
+    --primary-bg: #f0f4f8;
+    --secondary-bg: #ffffff;
+    --text-color: #333;
+    --primary-color: #2a9d8f;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--secondary-bg);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.today-info {
+    text-align: right;
+}
+
+.today-info h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.today-info p {
+    font-size: 1.2rem;
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.city-selector {
+    position: relative;
+}
+
+#cities-select {
+    width: 250px;
+    padding: 12px 40px 12px 20px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    color: var(--text-color);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#cities-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.city-selector::after {
+    content: '\f078';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+#cities-select option {
+    background-color: #fff;
+    color: #333;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #e6eff5);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08), -5px -5px 15px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1), -8px -8px 20px rgba(255, 255, 255, 1);
+}
+
+.card-content h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.card-content .time {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .header {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        text-align: center;
+    }
+    .today-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #cities-select {
+        width: 100%;
+    }
+    .card {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .card-content {
+        text-align: center;
+    }
+}
