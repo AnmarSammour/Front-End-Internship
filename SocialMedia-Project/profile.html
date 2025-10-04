@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي - موقع التواصل الاجتماعي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- شاشة التحميل -->
+    <div id="loader" class="d-flex justify-content-center align-items-center position-fixed w-100 h-100" 
+         style="top: 0; left: 0; background-color: rgba(255,255,255,0.8 ); z-index: 9999; visibility: hidden;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">جارٍ التحميل...</span>
+        </div>
+    </div>
+
+    <!-- شريط التنبيهات -->
+    <div id="success-alert" class="position-fixed top-0 end-0 p-3" style="z-index: 11000;"></div>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="home.html">
+                <i class="bi bi-chat-dots-fill text-primary"></i>
+                موقع التواصل
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">الرئيسية</a>
+                    </li>
+                </ul>
+                
+                <!-- أزرار المستخدم المسجل دخوله -->
+                <div id="logout-div" class="d-flex align-items-center" style="display: none !important;">
+                    <span class="navbar-text me-3">
+                        <img id="nav-user-image" src="" alt="صورة المستخدم" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span id="nav-username" class="ms-2"></span>
+                    </span>
+                    <button class="btn btn-outline-primary me-2" onclick="profileClicked()">
+                        <i class="bi bi-person"></i>
+                        الملف الشخصي
+                    </button>
+                    <button class="btn btn-danger" onclick="logout()">
+                        <i class="bi bi-box-arrow-right"></i>
+                        خروج
+                    </button>
+                </div>
+                
+                <!-- أزرار الزائر -->
+                <div id="logged-in-div" class="d-flex" style="display: flex !important;">
+                    <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#login-modal">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        دخول
+                    </button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#register-modal">
+                        <i class="bi bi-person-plus"></i>
+                        تسجيل جديد
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <!-- زر العودة -->
+                <div class="mb-4">
+                    <button class="btn btn-secondary" onclick="window.history.back()">
+                        <i class="bi bi-arrow-left"></i>
+                        العودة
+                    </button>
+                </div>
+
+                <!-- معلومات المستخدم -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center p-4">
+                        <img id="main-info-image" src="" alt="صورة المستخدم" class="rounded-circle mb-3 border border-3 border-primary" style="width: 150px; height: 150px; object-fit: cover;">
+                        <h3 id="main-info-name" class="fw-bold">اسم المستخدم</h3>
+                        <h5 id="main-info-username" class="text-muted">@username</h5>
+                        <p id="main-info-email" class="text-muted small">email@example.com</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div class="bg-light p-3 rounded">
+                                    <h4 id="posts-count" class="mb-1 fw-bold text-primary">0</h4>
+                                    <small class="text-muted">المنشورات</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-light p-3 rounded">
+                                    <h4 id="comments-count" class="mb-1 fw-bold text-primary">0</h4>
+                                    <small class="text-muted">التعليقات</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- منشورات المستخدم -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white border-bottom-0">
+                        <h4 id="name-posts" class="fw-bold">منشورات المستخدم</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="user-posts">
+                            <!-- سيتم تحميل منشورات المستخدم هنا -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نموذج تسجيل الدخول -->
+    <div class="modal fade" id="login-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">تسجيل الدخول</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username-input" class="form-label">اسم المستخدم:</label>
+                            <input type="text" class="form-control" id="username-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password-input" class="form-label">كلمة المرور:</label>
+                            <input type="password" class="form-control" id="password-input" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" onclick="loginBtnClicked()">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        دخول
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نموذج التسجيل -->
+    <div class="modal fade" id="register-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">تسجيل مستخدم جديد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="register-image-input" class="form-label">صورة الملف الشخصي:</label>
+                            <input type="file" class="form-control" id="register-image-input" accept="image/*">
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-name-input" class="form-label">الاسم:</label>
+                            <input type="text" class="form-control" id="register-name-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-username-input" class="form-label">اسم المستخدم:</label>
+                            <input type="text" class="form-control" id="register-username-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-password-input" class="form-label">كلمة المرور:</label>
+                            <input type="password" class="form-control" id="register-password-input" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success" onclick="registerBtnClicked()">
+                        <i class="bi bi-person-plus"></i>
+                        تسجيل
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.3/dist/axios.min.js"></script>
+    
+    <!-- Custom JavaScript Files -->
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>

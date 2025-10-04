@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap' );
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    direction: rtl;
+    text-align: right;
+}
+
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #343a40 !important;
+}
+
+.navbar-brand i {
+    color: #0d6efd;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #6c757d !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #0d6efd !important;
+}
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 1rem 1.25rem;
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.btn {
+    border-radius: 0.5rem;
+    font-weight: 700;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-outline-primary {
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.modal-content {
+    border-radius: 0.75rem;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-stats .bg-light {
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.profile-stats .bg-light:hover {
+    background-color: #e9ecef !important;
+}
+
+#loader {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: #0d6efd;
+}
+
+#success-alert .alert {
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.post-author img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.post-content {
+    cursor: pointer;
+}
+
+.badge.bg-secondary {
+    background-color: #e9ecef !important;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+hr {
+    border-top: 1px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}
